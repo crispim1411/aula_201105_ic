@@ -1,0 +1,147 @@
+//	PARA TESTE LOCAL
+#include <stdio.h>
+#include <stdlib.h>
+
+//	TIPOS DA ALTERA PARA FPGA
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "alt_types.h"
+
+//biblioteca para usar delay
+#include <unistd.h>
+
+#define PORT(base) IORD_ALTERA_AVALON_PIO_DATA(base)
+#define LAT(base, data) IOWR_ALTERA_AVALON_PIO_DATA(base, data)
+
+void setup(void);
+void loop(void);
+void f_timers(void);
+void f_timer1(void);
+
+alt_u16 max_timer1, max_timer2, max_timer3;
+alt_u8 state =0;
+alt_u8	DISP[] = {0x06,0x5b,0x4f,0x66,0x7d,0x07,0x7f,0x6f};
+
+void setup(void){
+	max_timer1 = 1000;
+}
+
+void loop(void){
+	f_timers();
+	usleep(1000);
+}
+
+void f_timers(void){
+
+	static alt_u16 c_timer1 = 0;
+
+	if(c_timer1<=max_timer1){
+		c_timer1++;
+	} else{
+		c_timer1 = 0;
+		f_timer1();
+	}
+
+}
+
+alt_u8 convert(alt_u8 dec){
+	switch (dec) {
+	case 1:
+		return 0x06;
+	break;
+	case 2:
+		return 0x5b;
+	break;
+	case 3:
+		return 0x4f;
+	break;
+	case 4:
+		return 0x66;
+	break;
+	case 5:
+		return 0x6d;
+	break;
+	case 6:
+		return 0x7d;
+	break;
+	case 7:
+		return 0x07;
+	break;
+	case 8:
+		return 0x7f;
+	break;
+	case 9:
+		return 0x6f;
+	break;
+	default:
+		return 0x00;
+	}
+	return 0x00;
+}
+
+alt_u8 state_machine(alt_u8 state) {
+    switch (state) {
+        case 3:
+            return 3;
+        break;
+        case 5:
+            return 5;
+        break;
+        case 7:
+            return 7;
+        break;
+        case 11:
+            return 11;
+        break;
+        case 13:
+            return 13;
+        break;
+		case 17:
+            return 17;
+        break;
+        case 19:
+            return 19;
+        break;
+        case 23:
+            return 23;
+        break;
+		case 29:
+            return 29;
+        break;
+        default:
+            return 2;
+        break;
+    }
+    return 1;
+}
+
+void f_timer1(void){
+
+	alt_u8 dd, du, state_converted;
+
+	state_converted = state_machine(state);
+
+	dd = state_converted/10;
+	du = state_converted - 10*dd;
+
+	printf("State: %u StateMachine: %u Dezena: %u Unidade: %u Dezena_7S: %u Unidade_7s: %u\n",
+														state,state_converted,dd, du, convert(dd), convert(du));
+
+	if(state<30){
+		state ++;
+	} else{
+		state = 0;
+	}
+
+}
+
+int main()
+{ 
+  setup();
+
+  while (1) loop();
+
+  return 0;
+}
+
+
