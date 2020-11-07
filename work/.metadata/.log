@@ -1,0 +1,150 @@
+!SESSION 2020-11-05 21:05:16.670 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-11-05 21:07:04.002
+!MESSAGE Indexed 'aula_20201105_bsp' (77 sources, 55 headers) in 0,69 sec: 919 declarations; 2.181 references; 113 unresolved inclusions; 5 syntax errors; 193 unresolved names (5,86%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-11-05 21:07:12.272
+!MESSAGE Indexed 'aula_20201105' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-11-05 21:12:55.686
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:555)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2020-11-05 21:12:55.693
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:555)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2020-11-05 21:13:11.999
+!MESSAGE An internal error occurred during: "Cleaning files".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.runtime.Path.append(Path.java:261)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.BuildDescription.addOutputs(BuildDescription.java:1024)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.BuildDescription.calculateOutputs(BuildDescription.java:1135)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.BuildDescription.handleMultiSteps(BuildDescription.java:833)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.BuildDescription.initDescription(BuildDescription.java:748)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.BuildDescription.init(BuildDescription.java:810)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.DefaultBuildDescriptionFactory.createBuildDescription(DefaultBuildDescriptionFactory.java:44)
+	at org.eclipse.cdt.managedbuilder.internal.buildmodel.DefaultBuildDescriptionFactory.createBuildDescription(DefaultBuildDescriptionFactory.java:36)
+	at org.eclipse.cdt.managedbuilder.buildmodel.BuildDescriptionManager.createBuildDescription(BuildDescriptionManager.java:97)
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.cleanFile(GeneratedMakefileBuilder.java:1638)
+	at org.eclipse.cdt.managedbuilder.internal.ui.actions.CleanFilesAction$CleanFilesJob.run(CleanFilesAction.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2020-11-05 21:15:27.632 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -data C:\Users\ianin\Downloads\CEFET\Dispositivos_Reprogramaveis\aula_20201105\work -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 4 2020-11-05 21:15:30.715
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2020-11-05 21:15:32.172
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2020-11-05 21:15:32.172
+!MESSAGE Unable to restore perspective: Workspace - Nios II.
+!SUBENTRY 2 org.eclipse.ui 0 0 2020-11-05 21:15:32.172
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2020-11-05 21:15:32.172
+!MESSAGE 
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.ui 4 0 2020-11-05 21:15:32.172
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:15:32.172
+!MESSAGE OK
+!SESSION 2020-11-05 21:43:13.887 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui 4 4 2020-11-05 21:43:29.510
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2020-11-05 21:43:30.856
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2020-11-05 21:43:30.856
+!MESSAGE Unable to restore perspective: Workspace - Nios II.
+!SUBENTRY 2 org.eclipse.ui 0 0 2020-11-05 21:43:30.856
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2020-11-05 21:43:30.856
+!MESSAGE 
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.ui 4 0 2020-11-05 21:43:30.856
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 unknown 0 0 2020-11-05 21:43:30.856
+!MESSAGE OK

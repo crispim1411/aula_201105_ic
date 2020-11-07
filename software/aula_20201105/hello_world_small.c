@@ -1,0 +1,166 @@
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "alt_types.h"
+#include <unistd.h>
+#define PORT(base) IORD_ALTERA_AVALON_PIO_DATA(base)
+#define LAT(base, data) IOWR_ALTERA_AVALON_PIO_DATA(base, data)
+
+/*
+		DIEGO BORGES - 1820195GELT
+		IAN CAMPOS - 1910071GELT
+		RODRIGO CRISPIM - 1528837GELT
+*/
+
+void setup(void);
+void loop(void);
+void f_timers(void);
+void f_timer1(void);
+void f_timer2(void);
+void f_timer3(void);
+
+alt_u16 max_timer1, max_timer2,
+				max_timer3;
+
+alt_u8 sw, key, ledr, ledg;
+
+void setup(void){
+	max_timer1 = 600;
+	max_timer2 = 200;
+	max_timer3 = 500;
+
+	LAT(HEX5_IC_BASE, 0x6d);
+	LAT(HEX4_IC_BASE, 0x06);
+}
+
+void loop(void){
+	f_timers();
+	usleep(1000);
+}
+
+void f_timers(void){
+
+	static alt_u16 c_timer1 = 0, c_timer2 = 0, c_timer3 = 0;
+
+	if(c_timer1<=max_timer1){
+		c_timer1++;
+	} else{
+		c_timer1 = 0;
+		f_timer1();
+	}
+
+	if(c_timer2<max_timer2){
+			c_timer2++;
+		} else{
+			c_timer2 = 0;
+			f_timer2();
+		}
+
+	if(c_timer3<max_timer3){
+			c_timer3++;
+		} else{
+			c_timer3 = 0;
+			f_timer3();
+		}
+}
+
+alt_u8 convert(alt_u8 dec){
+	switch (dec) {
+	case 1:
+		return 0x06;
+	break;
+	case 2:
+		return 0x5b;
+	break;
+	case 3:
+		return 0x4f;
+	break;
+	case 4:
+		return 0x66;
+	break;
+	case 5:
+		return 0x6d;
+	break;
+	case 6:
+		return 0x7d;
+	break;
+	case 7:
+		return 0x07;
+	break;
+	case 8:
+		return 0x7f;
+	break;
+	case 9:
+		return 0x6f;
+	break;
+	default:
+		return 0x00;
+	}
+	return 0x00;
+}
+
+alt_u8 state_machine(alt_u8 state) {
+    switch (state) {
+        case 2:
+            return 3;
+        break;
+        case 3:
+            return 5;
+        break;
+        case 5:
+            return 7;
+        break;
+        case 7:
+            return 11;
+        break;
+        case 11:
+            return 13;
+        break;
+        case 13:
+            return 17;
+        break;
+        case 19:
+            return 23;
+        break;
+        case 23:
+            return 29;
+        break;
+        default:
+            return 2;
+        break;
+    }
+    return 1;
+}
+
+void f_timer1(void){
+
+	static alt_u8 state =0, state_converted;
+	alt_u8 dd, du;
+
+	state_converted = state_machine(state);
+
+	dd = state_converted/10;
+	du = dd - state_converted;
+
+	LAT(HEX5_IC_BASE, dd);
+	LAT(HEX5_IC_BASE, du);
+
+	state ++;
+
+}
+
+void f_timer2(void){
+
+}
+
+void f_timer3(void){
+
+}
+
+int main()
+{ 
+  setup();
+
+  while (1) loop();
+
+  return 0;
+}
